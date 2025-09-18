@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS courses;
+DROP TABLE IF EXISTS user_engagement;
+DROP TABLE IF EXISTS enrollments;
+DROP TABLE IF EXISTS course_stats;
