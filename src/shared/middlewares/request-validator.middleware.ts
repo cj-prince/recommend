@@ -11,7 +11,6 @@ export const validateDataMiddleware =
       params: req.params,
       query: req.query,
       headers: req.headers,
-      file: req.file,
     };
 
     const options = { messages: { key: '{{key}} ' } };

@@ -1,6 +1,6 @@
 import express from "express";
 import authenticationRouter from '../../modules/authentication/routes';
-import courseRouter from "src/modules/course/routes";
+import courseRouter from "../../modules/course/routes";
 
 
 const appRouter = express.Router();

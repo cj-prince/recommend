@@ -30,6 +30,13 @@ courseRouter.patch(
   WatchAsyncController(CourseController.updateUserCoursesEngagement)
 );
 
+courseRouter.patch(
+  '/user/recommendations',
+  AuthenticationMiddleware.verifyAuthTokenMiddleware,
+  validateDataMiddleware(courseValidator.recommendationPayloadValidatorSchema, 'body'),
+  WatchAsyncController(CourseController.UserCoursesRecommendation)
+);
+
 
 
 export default courseRouter;

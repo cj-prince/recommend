@@ -1,5 +1,5 @@
 import * as dtos from './dto';
-import * as CourseEntities from './entities';
+// import * as CourseEntities from './entities';
 // import {
 //   BadException,
 // } from '../../shared/lib/errors';

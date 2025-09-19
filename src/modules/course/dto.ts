@@ -10,4 +10,11 @@ export class UserCourseEngagementDTO extends BaseEntity<UserCourseEngagementDTO>
   view_count: string;
   last_viewed_at: string;
   user_id: string;
+  scroll_time: Number;
 };
+
+export class RecommendationDTO extends BaseEntity<RecommendationDTO> {
+  limit: number;
+  user_id: string;
+};
+

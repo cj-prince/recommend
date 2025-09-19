@@ -11,5 +11,9 @@ export const coursePayloadValidatorSchema = Joi.object({
 export const userEngagementPayloadValidatorSchema = Joi.object({
   course_id: Joi.string().required(),
   view_count: Joi.string().required(),
-  last_viewed_at: Joi.string().required(),
+  scroll_time: Joi.number().required(),
+});
+
+export const recommendationPayloadValidatorSchema = Joi.object({
+  limit: Joi.number().optional()
 });

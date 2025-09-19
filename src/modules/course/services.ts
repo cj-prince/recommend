@@ -35,6 +35,11 @@ export class CourseServiceImpl implements CourseInterface {
     return response;
   };
 
+  public UserCoursesRecommendation = async (payload: dtos.RecommendationDTO
+  ): Promise<NotFoundException | entities.CourseRecommendationEntity[]> => {
+    const response = await CourseRepository.UserCoursesRecommendation(payload);
+    return response;
+  };
 }
 
 const CourseService = new CourseServiceImpl(

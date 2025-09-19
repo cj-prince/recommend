@@ -39,6 +39,17 @@ export class CourseControllerImpl {
     return Response.success(res, 'Successfully updated user engagement.', StatusCodes.CREATED, response);
   };
 
+  public UserCoursesRecommendation: fnRequest = async (req, res) => {
+    const { id } = req.user as User;
+    const payload = new dtos.RecommendationDTO(req.body);
+    payload.user_id = id;
+    const response = await CourseController.UserCoursesRecommendation(payload);
+    if (response instanceof NotFoundException) {
+      return Response.error(res, response, StatusCodes.BAD_REQUEST);
+    }
+    return Response.success(res, 'Successfully fetched user recommendations.', StatusCodes.CREATED, response);
+  };
+
 }
 
 const courseController = new CourseControllerImpl();
