@@ -1,17 +1,19 @@
 export default {
-  fetchCourses: `
-    SELECT
-      id,
-      title,
-      description,
-      category,
-      popularity_score
-    FROM courses
-    WHERE (name ILIKE '%' || $3 || '%' OR $3 = '' OR $3 IS NULL)
-    ORDER BY updated_at DESC
-    OFFSET $1
-    LIMIT $2
-  `,
+fetchCourses: `
+  SELECT
+    id,
+    title,
+    description,
+    category,
+    popularity_score,
+    tags,
+    conversion_rate
+  FROM courses
+  WHERE ($3 = '' OR $3 IS NULL OR title ILIKE '%' || $3 || '%' OR description ILIKE '%' || $3 || '%')
+  ORDER BY updated_at DESC
+  OFFSET $1
+  LIMIT $2
+`,
 
 
   fetchCourseById: `
@@ -55,7 +57,7 @@ export default {
 
   fetchUserCourseData: `
     SELECT 
-        u.id, u.email, u.name, u.interests, u.interest_tags,
+        u.id, u.email, u.user_name, u.interests, u.interest_tags,
         json_object_agg(
             ue.course_id, 
             json_build_object(
@@ -73,7 +75,7 @@ export default {
   getCourses:`
       SELECT 
           id, title, description, tags, category, 
-          difficulty_level, popularity_score, conversion_rate
+          popularity_score, conversion_rate
       FROM courses
       ORDER BY popularity_score DESC
   `,

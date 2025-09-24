@@ -12,7 +12,7 @@ const courseRouter = Router();
 courseRouter.get(
   '/',
   AuthenticationMiddleware.verifyAuthTokenMiddleware,
-  validateDataMiddleware(courseValidator.coursePayloadValidatorSchema, 'body'),
+  validateDataMiddleware(courseValidator.coursePayloadValidatorSchema, 'query'),
   WatchAsyncController(CourseController.fetchCourses)
 );
 
@@ -30,10 +30,10 @@ courseRouter.patch(
   WatchAsyncController(CourseController.updateUserCoursesEngagement)
 );
 
-courseRouter.patch(
+courseRouter.get(
   '/user/recommendations',
   AuthenticationMiddleware.verifyAuthTokenMiddleware,
-  validateDataMiddleware(courseValidator.recommendationPayloadValidatorSchema, 'body'),
+  validateDataMiddleware(courseValidator.recommendationPayloadValidatorSchema, 'query'),
   WatchAsyncController(CourseController.UserCoursesRecommendation)
 );
 

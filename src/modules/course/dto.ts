@@ -1,8 +1,8 @@
 import { BaseEntity } from '../../shared/utils/base-entity';
 export class CourseDTO extends BaseEntity<CourseDTO> {
-  limit: string;
-  page: string;
-  search: string;
+  limit?: string;
+  page?: string;
+  search?: string;
 };
 
 export class UserCourseEngagementDTO extends BaseEntity<UserCourseEngagementDTO> {
@@ -14,7 +14,7 @@ export class UserCourseEngagementDTO extends BaseEntity<UserCourseEngagementDTO>
 };
 
 export class RecommendationDTO extends BaseEntity<RecommendationDTO> {
-  limit: number;
+  limit?: number;
   user_id: string;
 };
 

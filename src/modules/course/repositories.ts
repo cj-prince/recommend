@@ -107,7 +107,7 @@ public async fetchCourses(
 
 
   public async getAvailableCourses() {
-    const courses = await db.oneOrNone(CourseQuery.getCourses);
+    const courses = await db.manyOrNone(CourseQuery.getCourses);
       return courses;
   }
 
@@ -204,12 +204,10 @@ public async UserCoursesRecommendation(payload: dtos.RecommendationDTO): Promise
     try {
       const {user_id  , limit = 3} = payload;
         const userData = await this.fetchUserCourseInformation(user_id);
-
         if (userData instanceof NotFoundException) {
           throw userData;
         }
-        const allCourses: entities.CourseEntity[] = await this.getAvailableCourses();
-
+        const allCourses = await this.getAvailableCourses();
         const scoredCourses = await Promise.all(
           allCourses.map(async (course: entities.CourseEntity) => ({
             course,
