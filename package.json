@@ -39,7 +39,8 @@
     "jsonwebtoken": "^9.0.1",
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",
-    "pg-promise": "^11.5.4"
+    "pg-promise": "^11.5.4",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
@@ -51,7 +52,7 @@
     "@types/morgan": "^1.9.4",
     "@types/node": "^24.5.2",
     "@types/nodemailer": "^6.4.17",
-    "@types/uuid": "^9.0.2",
+    "@types/uuid": "^9.0.8",
     "chai": "^4.3.7",
     "nodemon": "^2.0.22",
     "nyc": "^15.1.0",
