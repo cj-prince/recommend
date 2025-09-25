@@ -11,7 +11,7 @@
     "typeRoots": ["src/shared/types"],
     "removeComments": true,
     "noImplicitAny": false,
-   "strictNullChecks": false, 
+    "strictNullChecks": false, 
     "strictFunctionTypes": false,  
     "noImplicitThis": false, 
     "noUnusedLocals": false,  
