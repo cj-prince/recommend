@@ -3,7 +3,7 @@
 		"ENV": "TEST_DATABASE_URL"
 	},
 	"production": {
-		"ENV": "TEST_PROD_NODE_ENV"
+		"ENV": "DATABASE_URL"
 	},
 	"sql-file" : true
 }

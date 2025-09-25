@@ -11,4 +11,4 @@ export const JwtSignOptions: JwtSignature = {
 export default {
   production,
   development
-}[process.env.TESTS_NODE_ENV ?? 'development'];
+}[process.env.NODE_ENV ?? 'development'];
