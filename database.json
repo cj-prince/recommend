@@ -1,6 +1,6 @@
 {
 	"development": {
-		"ENV": "TEST_DATABASE_URL"
+		"ENV": "DATABASE_URL"
 	},
 	"production": {
 		"ENV": "DATABASE_URL"
